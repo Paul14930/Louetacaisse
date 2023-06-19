@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Voitures</h1>
+
+<div id="voitures">
+  <% @voitures.each do |voiture| %>
+    <%= render voiture %>
+    <p>
+      <%= link_to "Show this voiture", voiture %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New voiture", new_voiture_path %>
