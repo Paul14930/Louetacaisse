@@ -4,3 +4,9 @@
 <h1 class="text-3xl font-bold underline">
     Hello world!
 </h1>
+<% @voitures.each do |voiture|%>
+<%= voiture.marque %>
+<%= voiture.modele %>
+<%= voiture.prix %>
+<%= voiture.photo %>
+<%= end %>

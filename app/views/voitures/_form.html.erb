@@ -8,10 +8,14 @@
     <%= f.input :modele %>
     <%= f.input :annee %>
     <%= f.input :description %>
-    <%= f.input :annee %>
+    <%# <%= f.input :annee %>
     <%= f.input :prix %>
     <%= f.association :user %>
-    <%= f.input :photo %>
+    <%# <%= f.input :photo %>
+     <%# <%= f.label :image %>
+  <%# <%= f.file_field :image %>
+
+  <%= f.input :image, as: :file %>
   </div>
 
   <div class="form-actions">
