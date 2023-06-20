@@ -5,6 +5,6 @@
 <div>
   <%= link_to "Edit this voiture", edit_voiture_path(@voiture) %> |
   <%= link_to "Back to voitures", voitures_path %>
+ <%= button_to "Destroy this voiture", @voiture, method: :delete %>
 
-  <%= button_to "Destroy this voiture", @voiture, method: :delete %>
 </div>
