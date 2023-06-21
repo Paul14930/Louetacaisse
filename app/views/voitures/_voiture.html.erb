@@ -17,7 +17,7 @@
   <%# <p>
     <strong>Description:</strong>
     <%= voiture.description %>
-  <%# </p> %> 
+  <%# </p> %>
 
   <%# <p>
     <strong>Annee:</strong>
@@ -159,7 +159,7 @@
           </div> %>
 
           <div class="mt-10 flex">
-            <button type="submit" class="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full">Réserver</button>
+            <%# <button type="submit" class="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full">Réserver</button> %>
 
             <button type="button" class="ml-4 flex items-center justify-center rounded-md px-3 py-3 text-gray-400 hover:bg-gray-100 hover:text-gray-500">
               <svg class="h-6 w-6 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -169,6 +169,32 @@
             </button>
           </div>
         </form>
+
+
+<%= simple_form_for [@voiture,@booking] do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :date_debut %>
+    <%= f.input :date_fin %>
+    <%# <%= f.association :user %>
+    <%# <%= f.association :voiture %>
+    <%# <%= f.input :valide %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+<%# <%= button_to 'Réserver', reserver_voiture_path(@voiture), method: :post, class: "flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full" %>
+  </div>
+<% end %>
+
+
+
+
+<%# <%= link_to 'Réserver', reserver_voiture_path(@voiture), method: :post, class: 'btn btn-primary'%>
+<%# <%= button_to 'Réserver', reserver_voiture_path(@voiture), method: :post, class: "flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full" %>
+<%# <%= render "bookings/form"%>
 
         <section aria-labelledby="details-heading" class="mt-12">
           <h2 id="details-heading" class="sr-only">Additional details</h2>
@@ -204,3 +230,7 @@
                 </ul>
               </div>
             </div>
+
+
+<%# (@user, as: :user, method: :post, url: users_path)
+(@voiture,@booking, method: :post, url: ) %>

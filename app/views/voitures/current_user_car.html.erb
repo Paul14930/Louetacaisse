@@ -27,12 +27,12 @@
 </button> %>
 <%= link_to "Modifier", edit_voiture_path(voiture), class:"rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" %>
 
- <%= link_to "Supprimer", voiture_path(voiture), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir supprimer cette voiture ?" } %>
- <%= button_to "Destroy this voiture", voiture, class:"rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600", method: :delete %>
+ <%# <%= link_to "Supprimer", voiture_path(voiture), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir supprimer cette voiture ?" } %>
+ <%= button_to "Supprimer", voiture, class:"rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600", method: :delete %>
 
-          <div class="mt-6">
+          <%# <div class="mt-6">
             <a href="#" class="relative flex items-center justify-center rounded-md border border-transparent bg-gray-100 px-8 py-2 text-sm font-medium text-gray-900 hover:bg-gray-200">Booking<span class="sr-only">, Zip Tote Basket</span></a>
-          </div>
+          </div> %>
         </div>
       <% end %>
     </div>

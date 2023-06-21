@@ -8,6 +8,9 @@ class VoituresController < ApplicationController
 
   # GET /voitures/1 or /voitures/1.json
   def show
+
+    # @booking = Booking.new(voiture: @voiture, user: current_user)
+    @booking = Booking.new
   end
 
   # GET /voitures/new
@@ -61,6 +64,16 @@ class VoituresController < ApplicationController
     @voitures = Voiture.where(user_id: current_user.id)
   end
 
+  def reserver
+    @voiture = Voiture.find(params[:id])
+    @booking = Booking.new(voiture: @voiture, user: current_user)
+
+    if @booking.save
+      redirect_to @voiture, notice: "La voiture a été réservée avec succès."
+    else
+      redirect_to @voiture, alert: "La réservation de la voiture a échoué."
+    end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
