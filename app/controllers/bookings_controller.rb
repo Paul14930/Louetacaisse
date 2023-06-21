@@ -11,20 +11,23 @@ class BookingsController < ApplicationController
   end
 
   # GET /bookings/new
-  def new
-    @booking = Booking.new
-  end
+
 
   # GET /bookings/1/edit
   def edit
   end
 
-  # POST /bookings or /bookings.json
+
+
   def create
+    @voiture = Voiture.find(params[:voiture_id])
+    # @booking = @voiture.bookings.build(booking_params)
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    @booking.voiture = Voiture.find(params[:id])
+    @booking.voiture = @voiture
+
     @booking.save
+    redirect_to bookings_path
     # respond_to do |format|
     #   if @booking.save
     #     format.html { redirect_to booking_url(@booking), notice: "Booking was successfully created." }
@@ -71,6 +74,6 @@ class BookingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def booking_params
-      params.require(:booking).permit(:date_debut, :date_fin, :user_id, :voiture_id, :valide)
+      params.require(:booking).permit(:date_debut, :date_fin, :valide)
     end
 end
