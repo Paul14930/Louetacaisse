@@ -3,5 +3,5 @@ class Voiture < ApplicationRecord
   has_one_attached :image
   validates :image, presence: true
   # has_many :bookings, dependant: :destroy
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
 end
