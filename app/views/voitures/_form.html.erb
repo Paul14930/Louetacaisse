@@ -9,7 +9,7 @@
     <%= f.input :description %>
     <%= f.input :prix %>
     <%= f.hidden_field :user_id, value: current_user.id %>
-    <%= f.input :image, as: :file %>
+    <%= f.input :image, as: :file, required: true %>
   </div>
 
   <div class="form-actions">
