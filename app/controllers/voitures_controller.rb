@@ -52,7 +52,7 @@ class VoituresController < ApplicationController
     @voiture.destroy
 
     respond_to do |format|
-      format.html { redirect_to voitures_url, notice: "Voiture was successfully destroyed." }
+      format.html { redirect_to voiture_path, notice: "Voiture was successfully destroyed." }
       format.json { head :no_content }
     end
   end
