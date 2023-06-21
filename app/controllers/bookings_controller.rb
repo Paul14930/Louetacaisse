@@ -22,16 +22,18 @@ class BookingsController < ApplicationController
   # POST /bookings or /bookings.json
   def create
     @booking = Booking.new(booking_params)
-
-    respond_to do |format|
-      if @booking.save
-        format.html { redirect_to booking_url(@booking), notice: "Booking was successfully created." }
-        format.json { render :show, status: :created, location: @booking }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @booking.errors, status: :unprocessable_entity }
-      end
-    end
+    @booking.user = current_user
+    @booking.voiture = Voiture.find(params[:id])
+    @booking.save
+    # respond_to do |format|
+    #   if @booking.save
+    #     format.html { redirect_to booking_url(@booking), notice: "Booking was successfully created." }
+    #     format.json { render :show, status: :created, location: @booking }
+    #   else
+    #     format.html { render :new, status: :unprocessable_entity }
+    #     format.json { render json: @booking.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /bookings/1 or /bookings/1.json
@@ -55,6 +57,10 @@ class BookingsController < ApplicationController
       format.html { redirect_to bookings_url, notice: "Booking was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def current_user_booking
+    @bookings = Booking.where(user_id: current_user.id)
   end
 
   private
