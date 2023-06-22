@@ -27,7 +27,7 @@ class BookingsController < ApplicationController
     @booking.voiture = @voiture
 
     @booking.save
-    redirect_to bookings_path
+    redirect_to current_user_booking_path
     # respond_to do |format|
     #   if @booking.save
     #     format.html { redirect_to booking_url(@booking), notice: "Booking was successfully created." }
@@ -57,7 +57,7 @@ class BookingsController < ApplicationController
     @booking.destroy
 
     respond_to do |format|
-      format.html { redirect_to bookings_url, notice: "Booking was successfully destroyed." }
+      format.html { redirect_to current_user_booking_path, notice: "Booking was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -66,6 +66,7 @@ class BookingsController < ApplicationController
     @bookings = Booking.where(user_id: current_user.id)
     @bookings = @bookings.reverse
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
