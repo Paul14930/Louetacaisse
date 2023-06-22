@@ -7,8 +7,8 @@ User.destroy_all
 puts 'detroy all bookings'
 Booking.destroy_all
 
-# puts '------------------------------'
-# puts 'starting seed'
+puts '------------------------------'
+puts 'starting seed'
 # nextcar = ["voit1.jpg","voit2.jpg","voit3.jpg","voit4.jpg","voit5.jpg","voit6.jpg","voit7.jpg","voit8.jpg"]
 # user = User.new(
 #   email: "gregory.bail@cogeli.fr",
