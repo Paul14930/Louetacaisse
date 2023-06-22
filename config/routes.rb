@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :bookings, except: :create
+  resources :bookings, except: [:new, :create]
   resources :voitures do
     resources :bookings, only: :create
   end
