@@ -9,7 +9,5 @@ export default class extends Controller {
     this.michelTarget.classList.toggle("d-none")
 
   }
-  // cible = document.querySelector ("avatar")=> {
 
-  // }
 }
