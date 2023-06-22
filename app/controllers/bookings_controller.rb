@@ -64,6 +64,7 @@ class BookingsController < ApplicationController
 
   def current_user_booking
     @bookings = Booking.where(user_id: current_user.id)
+    @bookings = @bookings.reverse
   end
 
   private
