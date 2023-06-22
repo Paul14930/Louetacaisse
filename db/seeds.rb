@@ -32,7 +32,7 @@ user = User.new(
       prix: Faker::Commerce.price(range: 35..250)
 
     )
-    path_voit = "#{image_path(nexcar.sample)}"
+    path_voit = "#{image_path(nextcar.sample)}"
   #  "app/assets/images/#{nextcar.sample}.jpg"
     voiture.user =  user
     voiture.image.attach(
