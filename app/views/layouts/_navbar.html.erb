@@ -28,7 +28,7 @@
             <%= link_to "New voiture", new_voiture_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" %>
             <%= link_to "Mes voitures", current_user_car_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" %>
 
-            <%= link_to "Mes réservations", root_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" %>
+            <%= link_to "Mes réservations", current_user_booking_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" %>
 
             <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" %>
           </div>
